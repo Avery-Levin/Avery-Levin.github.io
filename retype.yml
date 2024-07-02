@@ -1,0 +1,11 @@
+input: .
+output: .retype
+url: avery-levin.github.io
+branding:
+  title: Kotlin Guide for FTC
+  label: Guide
+links:
+- text: Getting Started
+  link: https://retype.com/guides/getting-started/
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved. But, like, follow the GPL or something."
