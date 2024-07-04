@@ -8,7 +8,7 @@ Before installing Kotlin, please make sure you have done the following:
 - Make sure the Kotlin Plugin is downloaded in Android Studio
 
 ## Buildscript
-The first step of adding Kotlin to your FTC project is by adding kotlin to the *build.gradle* file under build script. Add the following code to the aforementioned file: 
+The first step of adding Kotlin to your FTC project is by adding kotlin to the *build.gradle* file under build script. Add the indicated lines of code to the aforementioned file: 
 
 
     buildscript {
@@ -22,6 +22,6 @@ The first step of adding Kotlin to your FTC project is by adding kotlin to the *
 
     dependencies {
         classpath 'com.android.tools.build:gradle:7.2.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" <----- ADD THIS LINE
+        ==classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" <----- ADD THIS LINE==
     }
-    } 
+    }
