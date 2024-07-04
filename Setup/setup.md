@@ -4,7 +4,7 @@ Installing Kotlin into your FTC project is very easy and shouldn't take more tha
 ## Prerequisites
 Before installing Kotlin, please make sure you have done the following:
 - [Have the latest version of Android Studio downloaded and installed](https://developer.android.com/studio)
-- [Have a repository containing the latest version of the FTC SDK] (https://github.com/FIRST-Tech-Challenge/FtcRobotController)
+- [Have a repository containing the latest version of the FTC SDK](https://github.com/FIRST-Tech-Challenge/FtcRobotController)
 - Make sure the Kotlin Plugin is downloaded in Android Studio
 
 ## Buildscript
