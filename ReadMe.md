@@ -1,6 +1,5 @@
 # Welcome!
-Welcome to the comprehensive guide to using Kotlin in your FTC codebase! This guide assumes that you know how to program in Kotlin, but no other FTC programming knowledge is necessary. This guide is for both absolute beginners and seasoned programmers, although if you are capable of translating Java into Kotlin, I would recommend that over this guide as there are more resources available for Java.
-
+Welcome to the comprehensive guide to using Kotlin in your FTC codebase! This guide assumes that you know how to program in Kotlin, but no other FTC programming knowledge is necessary. This guide is meant for absolute beginners who do not have any experience with programming for FTC. If you already know how to do FTC programming in Java, or can easily translate Java to Kotlin, I would recommend doing that because more resources are written in Java,
 ## Contributing
 To contribute, all you have to do is make a pull request with the changes you would like to make. This is greatly appreciated as this is currently a solo, volunteer project.
 
