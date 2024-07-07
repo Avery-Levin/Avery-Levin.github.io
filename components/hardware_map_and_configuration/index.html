@@ -9,32 +9,33 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Welcome!</title>
-    <meta name="title" content="Welcome!">
-    <meta name="description" content="Welcome to the comprehensive guide to using Kotlin in your FTC codebase! This guide assumes that you know how to program in Kotlin, but no other FTC...">
+    <title>Hardware Map and Configuration</title>
+    <meta name="title" content="Hardware Map and Configuration">
+    <meta name="description" content="A HardwareMap is a class in the FTC SDK that, using its get method, takes a class for a specific device and its name in the configuration file you...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://avery-levin.github.io/">
+    <link rel="canonical" href="https://avery-levin.github.io/components/hardware_map_and_configuration/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://avery-levin.github.io/">
-    <meta property="og:title" content="Welcome!">
-    <meta property="og:description" content="Welcome to the comprehensive guide to using Kotlin in your FTC codebase! This guide assumes that you know how to program in Kotlin, but no other FTC...">
+    <meta property="og:url" content="https://avery-levin.github.io/components/hardware_map_and_configuration/">
+    <meta property="og:title" content="Hardware Map and Configuration">
+    <meta property="og:description" content="A HardwareMap is a class in the FTC SDK that, using its get method, takes a class for a specific device and its name in the configuration file you...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://avery-levin.github.io/">
-    <meta property="twitter:title" content="Welcome!">
-    <meta property="twitter:description" content="Welcome to the comprehensive guide to using Kotlin in your FTC codebase! This guide assumes that you know how to program in Kotlin, but no other FTC...">
+    <meta property="twitter:url" content="https://avery-levin.github.io/components/hardware_map_and_configuration/">
+    <meta property="twitter:title" content="Hardware Map and Configuration">
+    <meta property="twitter:description" content="A HardwareMap is a class in the FTC SDK that, using its get method, takes a class for a specific device and its name in the configuration file you...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.5.0.773695354284" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.773695354284" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.773695354284" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.773695354284" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.773695354284" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.773695354284" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.773695354284" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -49,7 +50,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Kotlin Guide for FTC</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Guide</span>
                     </div>
@@ -163,33 +164,51 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="welcome" class="break-words">
+<doc-anchor-target id="hardware-map-and-configuration" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#welcome">#</doc-anchor-trigger>
-        <span>Welcome!</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hardware-map-and-configuration">#</doc-anchor-trigger>
+        <span>Hardware Map and Configuration</span>
     </h1>
 </doc-anchor-target>
-<p>Welcome to the comprehensive guide to using Kotlin in your FTC codebase! This guide assumes that you know how to program in Kotlin, but no other FTC programming knowledge is necessary. This guide is meant for absolute beginners who do not have any experience with programming for FTC. If you already know how to do FTC programming in Java, or can easily translate Java to Kotlin, I would recommend doing that because more resources are written in Java,</p>
-<doc-anchor-target id="contributing">
+<doc-anchor-target id="what-is-a-hardwaremap">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contributing">#</doc-anchor-trigger>
-        <span>Contributing</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-a-hardwaremap">#</doc-anchor-trigger>
+        <span>What is a HardwareMap?</span>
     </h2>
 </doc-anchor-target>
-<p>To contribute, all you have to do is make a pull request with the changes you would like to make. This is greatly appreciated as this is currently a solo, volunteer project.</p>
-<doc-anchor-target id="running-locally">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#running-locally">#</doc-anchor-trigger>
-        <span>Running locally</span>
-    </h2>
-</doc-anchor-target>
-<p>To run this website locally, first install Retype. This can be accomplished by doing the following:</p>
+<p>A HardwareMap is a class in the FTC SDK that, using its <em>get</em> method, takes a class for a specific device and its name in the configuration file you made using your REV Driver Hub. It then returns an object for the device you inputted and allows for you to control it in code.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">npm install retype</code></pre>
-</doc-codeblock></div>
-<p>After navigating to the directory where you cloned the repository, run the following command to open the website in your web browser:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">retype start</code></pre>
+<pre class="language-kotlin"><code v-pre class="language-kotlin">package org.firstinspires.ftc.teamcode.AveryStuff
+
+import com.qualcomm.robotcore.hardware.DcMotor
+import com.qualcomm.robotcore.hardware.DigitalChannel
+import com.qualcomm.robotcore.hardware.DistanceSensor
+import com.qualcomm.robotcore.hardware.Gyroscope
+import com.qualcomm.robotcore.hardware.Servo
+import org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap
+
+
+class HardwareMapExample {
+    private val imu: Gyroscope
+    private val motorTest: DcMotor
+    private val digitalTouch: DigitalChannel
+    private val sensorColorRange: DistanceSensor
+    private val servoTest: Servo
+
+    init {
+        imu = hardwareMap.get(Gyroscope::class.java, &quot;imu&quot;)
+        motorTest = hardwareMap.get(DcMotor::class.java, &quot;motorTest&quot;)
+        digitalTouch = hardwareMap.get(DigitalChannel::class.java, &quot;digitalTouch&quot;)
+        sensorColorRange = hardwareMap.get(DistanceSensor::class.java, &quot;sensorColorRange&quot;)
+        servoTest = hardwareMap.get(Servo::class.java, &quot;servoTest&quot;)
+    }
+
+
+
+
+
+
+}</code></pre>
 </doc-codeblock></div>
 
                                 
@@ -200,16 +219,16 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../setup/installation/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Installation</span>
+                                            </span>
+                                        </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="setup/prerequisites/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Prerequisites</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -250,6 +269,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Welcome!", isRoot: true, level: 0, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Hardware Map and Configuration", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
