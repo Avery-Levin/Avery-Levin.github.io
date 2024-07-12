@@ -4,6 +4,7 @@ url: avery-levin.github.io
 branding:
   title: Kotlin Guide for FTC
   label: Guide
+  logo: /assets/images/IMG_1300.png
 links:
 - text: Contribute
   link: https://github.com/Avery-Levin/Avery-Levin.github.io
