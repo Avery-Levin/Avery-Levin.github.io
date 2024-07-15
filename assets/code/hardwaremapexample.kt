@@ -18,6 +18,7 @@ class HardwareMapExample {
     init {
         imu = hardwareMap.get(Gyroscope::class.java, "imu")
         motorTest = hardwareMap.get(DcMotor::class.java, "motorTest")
+        digitalTouch = hardwareMap.get(DigitalChannel::class.java, "digitalTouch")
         sensorColorRange = hardwareMap.get(DistanceSensor::class.java, "sensorColorRange")
         servoTest = hardwareMap.get(Servo::class.java, "servoTest")
     }
