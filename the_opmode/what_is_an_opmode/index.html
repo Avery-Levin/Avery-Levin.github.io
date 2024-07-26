@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.774471333373">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.775340075351">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.774471333373" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.775340075351" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.774471333373" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.775340075351" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.774471333373" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.774471333373" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.775340075351" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.775340075351" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -174,7 +174,25 @@
         <span>What is an OpMode?</span>
     </h1>
 </doc-anchor-target>
-<p>An OpMode is a class that you create that is runnable on your robot. There are two types of classes that can be extended to make an OpMode: LinearOpMode and OpMode. Both will be explained in this guide, but LinearOpMode will be used for any further examples for simplicity sake.</p>
+<p>An OpMode is a class that you create that is runnable on your robot.</p>
+<p>There are two types of classes that can be extended to make an OpMode: LinearOpMode and OpMode. Both will be explained in this guide, but LinearOpMode will be used for any further examples for simplicity sake.</p>
+<p>The general rule is that code in a regular OpMode is divided up based on when and how it runs, while code in a LinearOpMode runs consecutively using methods to pause execution.</p>
+<doc-anchor-target id="linearopmode">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#linearopmode">#</doc-anchor-trigger>
+        <span>LinearOpMode</span>
+    </h2>
+</doc-anchor-target>
+<p>Here are the most important methods included in the LinearOpMode class. Certain methods have been excluded because they aren&#x27;t needed for amateur programmers, but you can find all of them in FIRST&#x27;s documentation.</p>
+<ul>
+<li><code v-pre>runOpMode( )</code>  All code within this method will run once when the OpMode is initialized on your Driver Station.</li>
+<li><code v-pre>waitForStart()</code> This method will pause execution of code until you press the &quot;Start&quot; button on your driver station. This would be used if you wanted to run code in between initializing the code and the start of the period during a match.</li>
+<li><code v-pre>isStarted()</code> This method will return true if the &quot;Start&quot; button has been pressed.</li>
+<li><code v-pre>isStopRequested()</code> This method will return true if the &quot;Stop&quot; button was pressed.</li>
+<li><code v-pre>opModeIsActive()</code> will return <code v-pre>isStarted() &amp;&amp; !isStopRequested()</code></li>
+<li><code v-pre> opModeInInit()</code>   will return <code v-pre> !isStarted() &amp;&amp; !isStopRequested()</code></li>
+</ul>
+<p>Here is an example LinearOpMode that uses some of these methods:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-kotlin"><code v-pre class="language-kotlin">import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp
@@ -182,7 +200,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp
 @TeleOp // You have to specify whether an OpMode is for Autonomous or for teleop. If I wanted to make an autonomous OpMode, I would put @Autonomous
 class AveryTeeLeeOop : LinearOpMode()  { // Make sure your OpMode class is an extension of the correct class. Otherwise, your code won't run.
 
-    override fun runOpMode() // For methods that specify when code is run, you must override them. {
+    override fun runOpMode() /* For methods that specify when code is run, you must override them. */ {
         val averyMecanum = AveryMecanum(hardwareMap)
         val telemetry =  telemetry
         waitForStart()
@@ -196,7 +214,6 @@ class AveryTeeLeeOop : LinearOpMode()  { // Make sure your OpMode class is an ex
 
 }</code></pre>
 </doc-codeblock></div>
-<p>Here is a small example LinearOpMode that I wrote. You don&#x27;t have to know what everything means, but make sure to read the comments for some good advice regarding what you have to do to get your code to run.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -216,10 +233,10 @@ class AveryTeeLeeOop : LinearOpMode()  { // Make sure your OpMode class is an ex
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../the_opmode/linearopmode/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../components/hardware_map_and_configuration/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Linear​Op​Mode</span>
+                                                <span class="block mt-1">Hardware Map and Configuration</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
