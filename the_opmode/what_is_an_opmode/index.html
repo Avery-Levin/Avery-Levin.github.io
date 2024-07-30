@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.775340075351">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.775666721152">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.775340075351" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.775666721152" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.775340075351" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.775666721152" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.775340075351" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.775340075351" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.775666721152" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.775666721152" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -176,7 +176,7 @@
 </doc-anchor-target>
 <p>An OpMode is a class that you create that is runnable on your robot.</p>
 <p>There are two types of classes that can be extended to make an OpMode: LinearOpMode and OpMode. Both will be explained in this guide, but LinearOpMode will be used for any further examples for simplicity sake.</p>
-<p>The general rule is that code in a regular OpMode is divided up based on when and how it runs, while code in a LinearOpMode runs consecutively using methods to pause execution.</p>
+<p>The general rule is that code in a regular OpMode is divided up based on the conditions where it will be executed, while code in a LinearOpMode runs consecutively using methods to pause execution.</p>
 <doc-anchor-target id="linearopmode">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#linearopmode">#</doc-anchor-trigger>
@@ -197,8 +197,9 @@
 <pre class="language-kotlin"><code v-pre class="language-kotlin">import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp
 
-@TeleOp // You have to specify whether an OpMode is for Autonomous or for teleop. If I wanted to make an autonomous OpMode, I would put @Autonomous
-class AveryTeeLeeOop : LinearOpMode()  { // Make sure your OpMode class is an extension of the correct class. Otherwise, your code won't run.
+@TeleOp /* You have to specify whether an OpMode is for Autonomous or for teleop.
+ If I wanted to make an autonomous OpMode, I would put @Autonomous */
+class AveryTeeLeeOop : LinearOpMode()  { // Make sure you extend the correct class
 
     override fun runOpMode() /* For methods that specify when code is run, you must override them. */ {
         val averyMecanum = AveryMecanum(hardwareMap)
@@ -213,6 +214,40 @@ class AveryTeeLeeOop : LinearOpMode()  { // Make sure your OpMode class is an ex
 
 
 }</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="opmode">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#opmode">#</doc-anchor-trigger>
+        <span>OpMode</span>
+    </h2>
+</doc-anchor-target>
+<p>Here are all of the methods included in the OpMode class. Note that the first two are mandatory and you will get an error if you don&#x27;t override both of them.</p>
+<ul>
+<li><code v-pre>init()</code> The code within this method will run once when the &quot;Init&quot; button is pressed</li>
+<li><code v-pre>loop()</code> The code within this method will run continuously when you press &quot;Start&quot; and until you press &quot;Stop&quot;</li>
+<li><code v-pre>start()</code> The code within this method will run once when you press the &quot;Start&quot; button. This will always run before the code in the <code v-pre>loop()</code> method.</li>
+<li><code v-pre>init_loop</code> The code within this method will run continously when you press the &quot;Init&quot; button. This will always run after the code in the <code v-pre>init()</code> method.</li>
+<li><code v-pre>stop()</code> The code within this method will run once when you press the &quot;Stop&quot; button. You should not have any code that controls the drivetrain in this method because you may be penalized in competition for moving after the match is over.</li>
+</ul>
+<p>Here is an example OpMode.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-kotlin"><code v-pre class="language-kotlin">class OpModeDemonstration : OpMode() {
+    var counter : Int = 0
+    override fun init() {
+       telemetry.addLine(&quot;Beans&quot;) // This posts data that is viewable on the Driver Station
+    }
+
+    override fun loop() {
+        telemetry.addLine(counter.toString())
+        Thread.sleep(1000) /* Do not do this in real life!
+        All of the code running on your robot will freeze! */
+        counter += 1
+    }
+
+
+}
+
+</code></pre>
 </doc-codeblock></div>
 
                                 
