@@ -1,4 +1,6 @@
+
 # What is an OpMode?
+
 An OpMode is a class that you create that is runnable on your robot.
 
 There are two types of classes that can be extended to make an OpMode: LinearOpMode and OpMode. Both will be explained in this guide, but LinearOpMode will be used for any further examples for simplicity sake. 
@@ -6,6 +8,7 @@ There are two types of classes that can be extended to make an OpMode: LinearOpM
 The general rule is that code in a regular OpMode is divided up based on the conditions where it will be executed, while code in a LinearOpMode runs consecutively using methods to pause execution.
 
 ## LinearOpMode
+
 Here are the most important methods included in the LinearOpMode class. Certain methods have been excluded because they aren't needed for amateur programmers, but you can find all of them in FIRST's documentation.
 
 - `runOpMode( )`  All code within this method will run once when the OpMode is initialized on your Driver Station.
@@ -13,10 +16,9 @@ Here are the most important methods included in the LinearOpMode class. Certain 
 - `isStarted()` This method will return true if the "Start" button has been pressed.
 - `isStopRequested()` This method will return true if the "Stop" button was pressed.
 - `opModeIsActive()` will return `isStarted() && !isStopRequested()`
-- ` opModeInInit()`   will return ` !isStarted() && !isStopRequested()` 
+- `opModeInInit()`   will return `!isStarted() && !isStopRequested()`  
 
 Here is an example LinearOpMode that uses some of these methods:
-
 
 ``` kt
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode
@@ -41,9 +43,8 @@ class AveryTeeLeeOop : LinearOpMode()  { // Make sure you extend the correct cla
 }
 ```
 
-
-
 ## OpMode
+
 Here are all of the methods included in the OpMode class. Note that the first two are mandatory and you will get an error if you don't override both of them.
 
 - `init()` The code within this method will run once when the "Init" button is pressed
