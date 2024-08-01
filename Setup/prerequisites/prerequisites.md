@@ -3,6 +3,7 @@
 
 Before you begin programming, there are a few tasks that need to be completed to ensure your hardware is ready.
 
+
 ## Hardware Setup
 
 Assuming you are using a REV Control Hub, [REV has graciously provided a guide on configuring it](https://docs.revrobotics.com/duo-control/control-hub-gs). It is recommended to read through "Next Steps" as we will be going into more detail about some of the things that are mentioned.
