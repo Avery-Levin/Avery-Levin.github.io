@@ -44,4 +44,4 @@ class HardwareMapExample {
 
 ## What would you use it for?
 
-The hardwareMap class is used to initializing every component of your robot into your code so you can control each of them. For example, for a DcMotor assigned to the variable `frontLeftMotor`, you would turn it on full power using `frontLeftMotor.power = 1.0`. Note how power for motors is stored as a double. Overall, the hardwareMap class is vital to programming and it will be used extensively throughout your entire FTC programming career.
+The hardwareMap class is used to initializing every component of your robot into your code so you can control each of them. For example, for a DcMotor assigned to the variable `frontLeftMotor`, you would turn it on full power using `frontLeftMotor.power = 1.0`. Note how power for motors is stored as a Double. Overall, the hardwareMap class is vital to programming and it will be used extensively throughout your entire FTC programming career.
