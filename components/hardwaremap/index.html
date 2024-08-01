@@ -9,26 +9,24 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Installation</title>
-    <meta name="title" content="Installation">
-    <meta name="description" content="Installing Kotlin into your FTC project is very easy and shouldn't take more than a few minutes.">
+    <title>hardwareMap</title>
+    <meta name="title" content="hardwareMap">
+    <meta name="description" content="A hardwareMap is a class in the FTC SDK that, using its get method, takes a class for a specific device and its name in the configuration file you...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://avery-levin.github.io/setup/installation/">
+    <link rel="canonical" href="https://avery-levin.github.io/components/hardwaremap/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://avery-levin.github.io/setup/installation/">
-    <meta property="og:title" content="Installation">
-    <meta property="og:description" content="Installing Kotlin into your FTC project is very easy and shouldn't take more than a few minutes.">
-    <meta property="og:image" content="https://avery-levin.github.io/assets/images/installation-gradle.png">
+    <meta property="og:url" content="https://avery-levin.github.io/components/hardwaremap/">
+    <meta property="og:title" content="hardwareMap">
+    <meta property="og:description" content="A hardwareMap is a class in the FTC SDK that, using its get method, takes a class for a specific device and its name in the configuration file you...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://avery-levin.github.io/setup/installation/">
-    <meta property="twitter:title" content="Installation">
-    <meta property="twitter:description" content="Installing Kotlin into your FTC project is very easy and shouldn't take more than a few minutes.">
-    <meta property="twitter:image" content="https://avery-levin.github.io/assets/images/installation-gradle.png">
+    <meta property="twitter:url" content="https://avery-levin.github.io/components/hardwaremap/">
+    <meta property="twitter:title" content="hardwareMap">
+    <meta property="twitter:description" content="A hardwareMap is a class in the FTC SDK that, using its get method, takes a class for a specific device and its name in the configuration file you...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -37,6 +35,7 @@
     <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.775857532104" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.775857532104" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.775857532104" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -169,54 +168,62 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="installation" class="break-words">
+<doc-anchor-target id="hardwaremap" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installation">#</doc-anchor-trigger>
-        <span>Installation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hardwaremap">#</doc-anchor-trigger>
+        <span>hardwareMap</span>
     </h1>
 </doc-anchor-target>
-<p>Installing Kotlin into your FTC project is very easy and shouldn&#x27;t take more than a few minutes.</p>
-<doc-anchor-target id="project-gradle-script">
+<doc-anchor-target id="what-is-a-hardwaremap">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#project-gradle-script">#</doc-anchor-trigger>
-        <span>Project Gradle Script</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-a-hardwaremap">#</doc-anchor-trigger>
+        <span>What is a hardwareMap?</span>
     </h2>
 </doc-anchor-target>
-<p>The first step of adding Kotlin to your FTC project is by adding Kotlin to the <em>build.gradle</em> file that has <em>Project: REPO-NAME</em> next to it. Add the indicated lines of code to the aforementioned file:</p>
+<p>A hardwareMap is a class in the FTC SDK that, using its <em>get</em> method, takes a class for a specific device and its name in the configuration file you made using your REV Driver Hub. It then returns an object for the device you inputted and allows for you to control it in code.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">buildscript {
+<pre class="language-kotlin"><code v-pre class="language-kotlin">
+package org.firstinspires.ftc.teamcode.AveryStuff
 
-ext.kotlin_version = '1.8.20' &lt;----- ADD THIS LINE, UPDATE VERSION TO LATEST IF NEEDED
+import com.qualcomm.robotcore.hardware.DcMotor
+import com.qualcomm.robotcore.hardware.DigitalChannel
+import com.qualcomm.robotcore.hardware.DistanceSensor
+import com.qualcomm.robotcore.hardware.Gyroscope
+import com.qualcomm.robotcore.hardware.Servo
+import org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap
 
-repositories {
-    mavenCentral()
-    google()
+
+class HardwareMapExample {
+    private val imu: Gyroscope
+    private val motorTest: DcMotor
+    private val digitalTouch: DigitalChannel
+    private val sensorColorRange: DistanceSensor
+    private val servoTest: Servo
+
+    init {
+        imu = hardwareMap.get(Gyroscope::class.java, &quot;imu&quot;)
+        motorTest = hardwareMap.get(DcMotor::class.java, &quot;motorTest&quot;)
+        digitalTouch = hardwareMap.get(DigitalChannel::class.java, &quot;digitalTouch&quot;)
+        sensorColorRange = hardwareMap.get(DistanceSensor::class.java, &quot;sensorColorRange&quot;)
+        servoTest = hardwareMap.get(Servo::class.java, &quot;servoTest&quot;)
+    }
+
+
+
+
+
+
+
 }
-
-dependencies {
-    classpath 'com.android.tools.build:gradle:7.2.0'
-    ==classpath &quot;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version&quot; &lt;----- ADD THIS LINE==
-}
-}</code></pre>
+</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="teamcode-gradle-script">
+<doc-anchor-target id="what-would-you-use-it-for">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#teamcode-gradle-script">#</doc-anchor-trigger>
-        <span>TeamCode Gradle Script</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-would-you-use-it-for">#</doc-anchor-trigger>
+        <span>What would you use it for?</span>
     </h2>
 </doc-anchor-target>
-<p>The only other thing you have to do is copy the indicated line of code into the <em>build.gradle</em> file that has <em>Module: TeamCode</em> next to it.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">apply from: '../build.common.gradle'
-apply from: '../build.dependencies.gradle'
-apply plugin: 'kotlin-android' &lt;----- ADD THIS LINE</code></pre>
-</doc-codeblock></div>
-<p>If you are confused on where to copy the code, I have labeled the place to copy the first set of lines in blue, and the other line in yellow.
-<figure class="content-center">
-    <img src="../../assets/images/installation-gradle.png" alt="Please ignore everything else, as this is a preexisting project that has other libraries installed.">
-    <figcaption class="caption">Please ignore everything else, as this is a preexisting project that has other libraries installed.</figcaption>
-</figure>
-After doing this, you should be ready to start programming!</p>
+<p>The hardwareMap class is used to initializing every component of your robot into your code so you can control each of them. For example, for a DcMotor assigned to the variable <code v-pre>frontLeftMotor</code>, you would turn it on full power using <code v-pre>frontLeftMotor.power = 1.0</code>. Note how power for motors is stored as a Double. Overall, the hardwareMap class is vital to programming and it will be used extensively throughout your entire FTC programming career.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -226,20 +233,20 @@ After doing this, you should be ready to start programming!</p>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../setup/prerequisites/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../the_opmode/what_is_an_opmode/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Prerequisites</span>
+                                                <span class="block mt-1">What is an Op​Mode?</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../the_opmode/what_is_an_opmode/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../components/motors/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">What is an Op​Mode?</span>
+                                                <span class="block mt-1">Motors</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -283,6 +290,6 @@ After doing this, you should be ready to start programming!</p>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Installation", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "hardwareMap", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
