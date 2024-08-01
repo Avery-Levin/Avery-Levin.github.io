@@ -1,10 +1,11 @@
+
 # Installation
+
 Installing Kotlin into your FTC project is very easy and shouldn't take more than a few minutes.
 
-
 ## Project Gradle Script
-The first step of adding Kotlin to your FTC project is by adding Kotlin to the *build.gradle* file that has *Project: REPO-NAME* next to it. Add the indicated lines of code to the aforementioned file:
 
+The first step of adding Kotlin to your FTC project is by adding Kotlin to the *build.gradle* file that has *Project: REPO-NAME* next to it. Add the indicated lines of code to the aforementioned file:
 
     buildscript {
 
@@ -22,8 +23,8 @@ The first step of adding Kotlin to your FTC project is by adding Kotlin to the *
     }
 
 ## TeamCode Gradle Script
-The only other thing you have to do is copy the indicated line of code into the *build.gradle* file that has *Module: TeamCode* next to it.
 
+The only other thing you have to do is copy the indicated line of code into the *build.gradle* file that has *Module: TeamCode* next to it.
 
     apply from: '../build.common.gradle'
     apply from: '../build.dependencies.gradle'
