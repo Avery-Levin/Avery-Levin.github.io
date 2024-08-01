@@ -74,3 +74,7 @@ class OpModeDemonstration : OpMode() {
 
 
 ```
+
+### Warning regarding `while(true)` loops
+
+Only use a `while()` loop if you have some sort of exit condition. Otherwise, it will take an additional 5 seconds to stop the robot when you press the "Stop" button. This will cause you to incur penalties during autonomous if it keeps running after the 30 second period. Your code should be programmed in a way to be responsive to stop requests
