@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.775857532104">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.775934531212">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.775857532104" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.775934531212" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.775857532104" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.775934531212" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.775857532104" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.775934531212" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -175,6 +175,15 @@
 </doc-anchor-target>
 <p>In FTC, there are 2 classes that are used to control your motors: DcMotor and DcMotorEx. These 2 classes are very similar, and if you don&#x27;t plan on using the encoders attached to your motors, either of them will work.</p>
 <p>However, if you do intend to use the encoders on your motors for features such as measuring velocity or error correction, using the DcMotorEx class is required. That being said, if you are using Mecanum wheels and want to know where your robot is on the field during autonomous, I would invest in external encoders in the form of dead wheels due to how Mecanum wheels can slip.</p>
+<doc-anchor-target id="encoders">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#encoders">#</doc-anchor-trigger>
+        <span>Encoders</span>
+    </h2>
+</doc-anchor-target>
+<p>Encoders are the devices built into your motors that track how many times that they have rotated in terms of &quot;ticks&quot;, where each encoder has a designated amount ticks per rotation that can be found on the manufacturer&#x27;s website.</p>
+<p>There are two types of encoders: absolute and relative. Absolute encoders give you the angle that the shaft has rotated in starting from the starting point. In a world where these encoders gave you measurements in degrees, they would give you a number between 0 and 360. A relative encoder, on the other hand, gives the amount of times it has rotated forward since being reset, which would give you an answer from -∞ to +∞. You can get the position of the encoder in code by calling the method <code v-pre>getCurrentPosition</code> on a DcMotor object.</p>
+<p>The encoders on any motor that you would use in FTC today are relative and keep the number of ticks recorded until you reset them in code or restart the Robot Controller.</p>
 <doc-anchor-target id="direction">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#direction">#</doc-anchor-trigger>
@@ -191,7 +200,56 @@
         <span>Run Modes</span>
     </h2>
 </doc-anchor-target>
-<p>TODO</p>
+<p>Run modes determine how your motor will react to the input that you give it, which is usually the <code v-pre>power</code> variable. To change the run mode of a motor, run <code v-pre>motor.setMode(DcMotor.RunMode.RUN_MODE)</code></p>
+<doc-anchor-target id="run_without_encoders">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#run_without_encoders">#</doc-anchor-trigger>
+        <span>RUN_WITHOUT_ENCODERS</span>
+    </h3>
+</doc-anchor-target>
+<p><code v-pre>RUN_WITHOUT_ENCODERS</code> is by far the simplest way of running a motor. The motor will be provided with the amount of electricity specified in the <code v-pre>power</code> variable, with 1.0 being the maximum amount of electricity going in the direction specified, and 0.0 resulting in no power delivered to the motor</p>
+<doc-anchor-target id="run_with_encoders">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#run_with_encoders">#</doc-anchor-trigger>
+        <span>RUN_WITH_ENCODERS</span>
+    </h3>
+</doc-anchor-target>
+<p><code v-pre>RUN_WITH_ENCODERS</code> uses the motor&#x27;s built in encoder (assuming you plugged it in) to run the motor to the specified speed specified in the <code v-pre>power</code> variable, with 1.0 being full speed ahead and 0 being idle. While one might think that this is the same as the previously specified run mode, this is incorrect. Under the previous mode, you can run the motor at 0.5 electricity while the motor itself runs 10% faster or slower. However, running the motor on this mode will always result in the motor running at the specified speed because the encoder reads how fast the motor is turning and adjusts the amount of electricity provided.</p>
+<doc-anchor-target id="run_to_position">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#run_to_position">#</doc-anchor-trigger>
+        <span>RUN_TO_POSITION</span>
+    </h3>
+</doc-anchor-target>
+<p>In order to use the <code v-pre>RUN_TO_POSITION</code> run mode, you have to make sure you have already set a position for the motor to go to. Simply set the value of the variable <code v-pre>targetPosition</code> to the amount of encoder ticks you want it to travel, and the motor will run to that position when you change the run mode.</p>
+<doc-anchor-target id="note">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#note">#</doc-anchor-trigger>
+        <span>Note</span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>RUN_TO_POSITION</code> should only be used in single motor mechanisms such as a claw because multiple motor mechanisms are significantly harder to control with this mode in comparison to others.</p>
+<doc-anchor-target id="stop_and_reset_encoder">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stop_and_reset_encoder">#</doc-anchor-trigger>
+        <span>STOP_AND_RESET_ENCODER</span>
+    </h3>
+</doc-anchor-target>
+<p><code v-pre>STOP_AND_RESET_ENCODER</code> will force the motor to come to a complete stop and reset the number of ticks that the encoders have recorded. After that, you have to chose another run mode to set the motor to.</p>
+<doc-anchor-target id="dcmotorex-addendum">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dcmotorex-addendum">#</doc-anchor-trigger>
+        <span>DcMotorEx addendum</span>
+    </h2>
+</doc-anchor-target>
+<p>For people wanting to use certain encoder features, you should instantiate your motors using the DcMotorEx class. This gives you a few more extra features.</p>
+<doc-anchor-target id="velocity">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#velocity">#</doc-anchor-trigger>
+        <span>Velocity</span>
+    </h3>
+</doc-anchor-target>
+<p>The DcMotorEx class allows you to set your motor to a certain velocity in terms of encoder ticks. To do such, set the value of the <code v-pre>velocity</code> variable of the DcMotorEx object to the amount of ticks per second you want it to run at.</p>
 
                                 
                                 <!-- Required only on API pages -->
