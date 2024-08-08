@@ -25,7 +25,7 @@ By default, the direction is set to FORWARD. `exampleMotor.power = 1.0` will run
 
 ## Run Modes
 
-Run modes determine how your motor will react to the input that you give it, which is usually the `power` variable. To change the run mode of a motor, run `motor.setMode(DcMotor.RunMode.RUN_MODE)`
+Run modes determine how your motor will react to the input that you give it, which is usually the `power` variable. To change the run mode of a motor, use the method `motor.setMode(DcMotor.RunMode.RUN_MODE)`
 
 ### RUN_WITHOUT_ENCODERS
 
@@ -46,6 +46,19 @@ In order to use the `RUN_TO_POSITION` run mode, you have to make sure you have a
 ### STOP_AND_RESET_ENCODER
 
 `STOP_AND_RESET_ENCODER` will force the motor to come to a complete stop and reset the number of ticks that the encoders have recorded. After that, you have to chose another run mode to set the motor to.
+
+## Zero Power Behaviors
+
+Zero power behaviors effect how your motors come to a stop when power is not applied.
+
+There are two different zero power behaviors available in the FTC SDK, with those being brake and float.
+
+`BRAKE` will slow your motor down by applying force in the opposite direction.
+
+`FLOAT` will let your motors slow down using friction alone.
+
+To change your zero power behavior, use the method `motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BEHAVIOR_NAME)`.
+
 
 ## DcMotorEx addendum
 

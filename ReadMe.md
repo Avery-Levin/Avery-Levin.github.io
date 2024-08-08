@@ -9,11 +9,11 @@ If you already know how to program for FTC in Java and can switch to Kotlin with
 
  
  
- As this guide is meant for beginners and won't cover certain advanced topics, I would also recommend that you look at Java-specific guides afterwards. I fidn that is  easier to understand Java-based FTC code now that I understand how the FTC SDK works.
+ As this guide is meant for beginners and won't cover certain advanced topics, I would also recommend that you look at Java-specific guides afterwards. I find that is  easier to understand Java-based FTC code now that I understand how the FTC SDK works.
 
 
 ## Contributing
-To contribute, all you have to do is make a pull request to the _Dev_ branch with the changes you would like to make. This is greatly appreciated as this is currently a solo, volunteer project.
+To contribute, all you have to do is make a pull request to the main branch with the changes you would like to make. This is greatly appreciated as this is currently a solo, volunteer project.
 
 
 
