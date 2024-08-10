@@ -59,7 +59,6 @@ There are two different zero power behaviors available in the FTC SDK, with thos
 
 To change your zero power behavior, use the method `motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BEHAVIOR_NAME)`.
 
-
 ## DcMotorEx addendum
 
 For people wanting to use certain encoder features, you should instantiate your motors using the DcMotorEx class. This gives you a few more extra features.
