@@ -5,7 +5,7 @@ Welcome to the WORK IN PROGRESS beginners' guide to using Kotlin in your FTC cod
 
  This guide assumes that you know how to program in Kotlin, but no other FTC programming knowledge is necessary. This guide is meant for absolute beginners who do not have any experience with programming for FTC.
  
- This is intended as a foundational guide for beginning programmers who may not be comfortable with translating code from Java to Kotlin yet. I started this project because there weren't any guides for me when I first stated to program. While I was able to get by us ing old code, rookie teams without any reference would struggle without it. Kotlin is simply the easier programming language to use, and the goal of K4FTC is to make this an option for first-timers.
+ This is intended as a foundational guide for beginning programmers who may not be comfortable with translating code from Java to Kotlin yet. I started this project because there weren't any guides for me when I first started to program. While I was able to get by using old code, rookie teams without any reference would struggle without it. Kotlin is simply the easier programming language to use, and the goal of K4FTC is to make this an option for first-timers.
 
 
 ## Contributing
