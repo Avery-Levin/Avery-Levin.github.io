@@ -8,7 +8,7 @@ This guide assumes **no prior programming knowledge** other than basic Kotlin, b
 Kotlin offers **numerous benefits** over other FTC programming options.
 
 First, Kotlin and Android Studio are **far more powerful** tools than Blocks or OnBotJava, allowing you to use **advanced** programming techniques. They are less limited by **UI**, and they allow you to use advanced libraries such as **RoadRunner** or **Pedro Pathing**.
-**
+
 Secondly, Kotlin is a syntactically **simpler** language than Java and offers many **quality of life** features that make programming easier, such as type inferencing. [The developers behind Kotlin offer numerous reasons why, and I suggest that you read them.](https://kotlinlang.org/docs/comparison-to-java.html#some-java-issues-addressed-in-kotlin)
 
 ## Why K4FTC
