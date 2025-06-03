@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786500344180">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802297665195">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.6.0">
+    <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
     <title>Welcome!</title>
     <meta name="title" content="Welcome!">
-    <meta name="description" content="Welcome to the WORK IN PROGRESS beginners' guide to using Kotlin in your FTC codebase!">
+    <meta name="description" content="Welcome to the beginner's guide to using Kotlin in your FTC codebase!">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://avery-levin.github.io/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://avery-levin.github.io/">
     <meta property="og:title" content="Welcome!">
-    <meta property="og:description" content="Welcome to the WORK IN PROGRESS beginners' guide to using Kotlin in your FTC codebase!">
+    <meta property="og:description" content="Welcome to the beginner's guide to using Kotlin in your FTC codebase!">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://avery-levin.github.io/">
     <meta property="twitter:title" content="Welcome!">
-    <meta property="twitter:description" content="Welcome to the WORK IN PROGRESS beginners' guide to using Kotlin in your FTC codebase!">
+    <meta property="twitter:description" content="Welcome to the beginner's guide to using Kotlin in your FTC codebase!">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="resources/css/retype.css?v=3.6.0.786500344180" rel="stylesheet">
+    <link href="resources/css/retype.css?v=3.9.0.802297665195" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.6.0.786500344180" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.6.0.786500344180" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="resources/js/config.js?v=3.9.0.802297665195" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.9.0.802297665195" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -54,8 +54,8 @@
                                 <img class="max-h-10 dark:hidden md:inline-block" src="assets/images/img_1300.png">
                                 <img class="max-h-10 hidden dark:inline-block" src="assets/images/img_1300.png">
                             </span>
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Kotlin Guide for FTC</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Guide</span>
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Kotlin Guide for FTC</span>
+                        </a><span class="hidden mt-1 px-2 py-1 ml-4 text-xs font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-md md:inline-block">Guide</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -110,9 +110,8 @@
     
         <div class="container relative flex bg-white">
             <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-white border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
             
-                <!-- Render this div, if config.showSidebarFilter is `true` -->
                 <div class="flex items-center h-16 px-6">
                     <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
                 </div>
@@ -173,9 +172,32 @@
         <span>Welcome!</span>
     </h1>
 </doc-anchor-target>
-<p>Welcome to the WORK IN PROGRESS beginners&#x27; guide to using Kotlin in your FTC codebase!</p>
-<p>This guide assumes that you know how to program in Kotlin, but no other FTC programming knowledge is necessary. This guide is meant for absolute beginners who do not have any experience with programming for FTC.</p>
-<p>This is intended as a foundational guide for beginning programmers who may not be comfortable with translating code from Java to Kotlin yet. I started this project because there weren&#x27;t any guides for me when I first started to program. While I was able to get by using old code, rookie teams without any reference would struggle without it. Kotlin is simply the easier programming language to use, and the goal of K4FTC is to make this an option for first-timers.</p>
+<p>Welcome to the beginner&#x27;s guide to using Kotlin in your FTC codebase!</p>
+<doc-anchor-target id="whom-is-this-guide-for">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#whom-is-this-guide-for">#</doc-anchor-trigger>
+        <span>Whom is this guide for?</span>
+    </h2>
+</doc-anchor-target>
+<p>This guide assumes <strong>no prior programming knowledge</strong> other than basic Kotlin, but no other FTC programming knowledge is necessary. This guide is meant for <strong>absolute beginners</strong> and serves to act as a <strong>foundation</strong> for your FTC programming journey.</p>
+<doc-anchor-target id="why-kotlin">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-kotlin">#</doc-anchor-trigger>
+        <span>Why Kotlin?</span>
+    </h2>
+</doc-anchor-target>
+<p>Kotlin offers <strong>numerous benefits</strong> over other FTC programming options.</p>
+<p>First, Kotlin and Android Studio are <strong>far more powerful</strong> tools than Blocks or OnBotJava, allowing you to use <strong>advanced</strong> programming techniques. They are less limited by <strong>UI</strong>, and they allow you to use advanced libraries such as <strong>RoadRunner</strong> or <strong>Pedro Pathing</strong>.
+**
+Secondly, Kotlin is a syntactically <strong>simpler</strong> language than Java and offers many <strong>quality of life</strong> features that make programming easier, such as type inferencing. <a href="https://kotlinlang.org/docs/comparison-to-java.html#some-java-issues-addressed-in-kotlin">The developers behind Kotlin offer numerous reasons why, and I suggest that you read them.</a></p>
+<doc-anchor-target id="why-k4ftc">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-k4ftc">#</doc-anchor-trigger>
+        <span>Why K4FTC</span>
+    </h2>
+</doc-anchor-target>
+<p>I started this guide because I saw <strong>no viable options</strong> for <strong>rookies</strong> who are seeking to learn Kotlin for FTC without any previous knowledge of Java. While older, more experienced programmers who know both languages may be able to translate between the two languages when reading programming guides, this skill isn&#x27;t obvious to younger rookies who haven&#x27;t programmed before.</p>
+<p>K4FTC seeks to bridge this <strong>knowledge gap</strong>. By providing <strong>introductory</strong> instruction in FTC programming in Kotlin, we can give rookie programmers the skills they need to <strong>move on</strong> to other programming guides and concepts.</p>
 <doc-anchor-target id="contributing">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#contributing">#</doc-anchor-trigger>
@@ -183,14 +205,6 @@
     </h2>
 </doc-anchor-target>
 <p>To contribute, all you have to do is make a pull request to the main branch with the changes you would like to make. This is greatly appreciated as this is currently a solo, volunteer project.</p>
-<doc-anchor-target id="contributors">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contributors">#</doc-anchor-trigger>
-        <span>Contributors</span>
-    </h3>
-</doc-anchor-target>
-<p>This is a list of people who have made significant contributions to K4FTC. Feel free to add yourself to this list as a part of your PR in the format shown below.</p>
-<p>Avery L., FTC 11468</p>
 <doc-anchor-target id="running-locally">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#running-locally">#</doc-anchor-trigger>
@@ -212,7 +226,7 @@
                             </div>
                             <footer class="clear-both">
                             
-                                <nav class="flex mt-14">
+                                <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
                                     </div>
                             
@@ -229,13 +243,13 @@
                             </footer>
                         </main>
                 
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
+                        <div class="print:border-none border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div class="print:hidden">
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024. All rights reserved. But, like, follow the GPL or something.</p></div>
+                                <div class="print:justify-center docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved. But, like, follow the GPL or something.</p></div>
                             </footer>
                         </div>
                     </div>

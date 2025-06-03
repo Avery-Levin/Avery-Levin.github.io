@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786500344180">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802297665195">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.6.0">
+    <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
     <title>What is an OpMode?</title>
@@ -28,14 +28,14 @@
     <meta property="twitter:title" content="What is an OpMode?">
     <meta property="twitter:description" content="An OpMode is a class that you create that is runnable on your robot.">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.786500344180" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802297665195" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.786500344180" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.786500344180" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.786500344180" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802297665195" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802297665195" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.9.0.802297665195" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -55,8 +55,8 @@
                                 <img class="max-h-10 dark:hidden md:inline-block" src="../../assets/images/img_1300.png">
                                 <img class="max-h-10 hidden dark:inline-block" src="../../assets/images/img_1300.png">
                             </span>
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Kotlin Guide for FTC</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Guide</span>
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Kotlin Guide for FTC</span>
+                        </a><span class="hidden mt-1 px-2 py-1 ml-4 text-xs font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-md md:inline-block">Guide</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -111,9 +111,8 @@
     
         <div class="container relative flex bg-white">
             <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-white border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
             
-                <!-- Render this div, if config.showSidebarFilter is `true` -->
                 <div class="flex items-center h-16 px-6">
                     <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
                 </div>
@@ -175,8 +174,8 @@
     </h1>
 </doc-anchor-target>
 <p>An OpMode is a class that you create that is runnable on your robot.</p>
-<p>There are two types of classes that can be extended to make an OpMode: LinearOpMode and OpMode. Both will be explained in this guide, but LinearOpMode will be used for any further examples for simplicity sake.</p>
-<p>The general rule is that code in a regular OpMode is divided up based on the conditions where it will be executed, while code in a LinearOpMode runs consecutively using methods to pause execution.</p>
+<p>There are two types of classes that can be extended to make an OpMode: <strong>linearOpMode</strong> and <strong>OpMode</strong>. Both will be explained in this guide, but <strong>LinearOpMode</strong> will be used for the remainder of this guide.</p>
+<p>The general rule is that code in a regular OpMode is divided up based on the <strong>conditions</strong> where it will be executed, while code in a LinearOpMode runs <strong>consecutively</strong> using methods to pause execution.</p>
 <doc-anchor-target id="linearopmode">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#linearopmode">#</doc-anchor-trigger>
@@ -185,10 +184,13 @@
 </doc-anchor-target>
 <p>Here are the most important methods included in the LinearOpMode class. Certain methods have been excluded because they aren&#x27;t needed for amateur programmers, but you can find all of them in FIRST&#x27;s documentation.</p>
 <ul>
-<li><code v-pre>runOpMode( )</code>  All code within this method will run once when the OpMode is initialized on your Driver Station.</li>
-<li><code v-pre>waitForStart()</code> This method will pause execution of code until you press the &quot;Start&quot; button on your driver station. This would be used if you wanted to run code in between initializing the code and the start of the period during a match.</li>
-<li><code v-pre>isStarted()</code> This method will return true if the &quot;Start&quot; button has been pressed.</li>
-<li><code v-pre>isStopRequested()</code> This method will return true if the &quot;Stop&quot; button was pressed.</li>
+<li><code v-pre>runOpMode( )</code>  All code within this method will run once when the OpMode is initialized on your Driver Station. This is <strong>required</strong> for every LinearOpMode class.</li>
+</ul>
+<hr>
+<ul>
+<li><code v-pre>waitForStart()</code> This method will <strong>pause</strong> execution of code until you press the &quot;<strong>Start</strong>&quot; button on your driver station. This would be used if you wanted to run code in between initializing the code and the start of the period during a match.</li>
+<li><code v-pre>isStarted()</code> This method will return <strong>true</strong> if the &quot;<strong>Start</strong>&quot; button has been pressed.</li>
+<li><code v-pre>isStopRequested()</code> This method will return <strong>true</strong> if the &quot;<strong>Stop</strong>&quot; button was pressed.</li>
 <li><code v-pre>opModeIsActive()</code> will return <code v-pre>isStarted() &amp;&amp; !isStopRequested()</code></li>
 <li><code v-pre>opModeInInit()</code>   will return <code v-pre>!isStarted() &amp;&amp; !isStopRequested()</code></li>
 </ul>
@@ -221,13 +223,16 @@ class AveryTeeLeeOop : LinearOpMode()  { // Make sure you extend the correct cla
         <span>OpMode</span>
     </h2>
 </doc-anchor-target>
-<p>Here are all of the methods included in the OpMode class. Note that the first two are mandatory and you will get an error if you don&#x27;t override both of them.</p>
+<p>Two methods in the OpMode class are required for your opmode to work.</p>
 <ul>
-<li><code v-pre>init()</code> The code within this method will run once when the &quot;Init&quot; button is pressed</li>
-<li><code v-pre>loop()</code> The code within this method will run continuously when you press &quot;Start&quot; and until you press &quot;Stop&quot;</li>
-<li><code v-pre>start()</code> The code within this method will run once when you press the &quot;Start&quot; button. This will always run before the code in the <code v-pre>loop()</code> method.</li>
-<li><code v-pre>init_loop</code> The code within this method will run continously when you press the &quot;Init&quot; button. This will always run after the code in the <code v-pre>init()</code> method.</li>
-<li><code v-pre>stop()</code> The code within this method will run once when you press the &quot;Stop&quot; button. You should not have any code that controls the drivetrain in this method because you may be penalized in competition for moving after the match is over.</li>
+<li><code v-pre>init()</code> The code within this method will run <strong>once</strong> when the &quot;<strong>Init</strong>&quot; button is pressed</li>
+<li><code v-pre>loop()</code> The code within this method will run <strong>continuously</strong> when you press &quot;<strong>Start</strong>&quot; and until you press &quot;<strong>Stop</strong>&quot;</li>
+</ul>
+<p>There are other methods within the OpMode class that help you control the flow of your code.</p>
+<ul>
+<li><code v-pre>start()</code> The code within this method will run <strong>once</strong> when you press the &quot;<strong>Start</strong>&quot; button. This will <strong>always</strong> run before the code in the <code v-pre>loop()</code> method.</li>
+<li><code v-pre>init_loop</code> The code within this method will run <strong>continously</strong> when you press the &quot;<strong>Init</strong>&quot; button. This will always run after the code in the <code v-pre>init()</code> method.</li>
+<li><code v-pre>stop()</code> The code within this method will run <strong>once</strong> when you press the &quot;<strong>Stop</strong>&quot; button.</li>
 </ul>
 <p>Here is an example OpMode.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -256,41 +261,8 @@ class AveryTeeLeeOop : LinearOpMode()  { // Make sure you extend the correct cla
         <span>Warning regarding <code v-pre>while()</code> loops</span>
     </h3>
 </doc-anchor-target>
-<p>Only use a <code v-pre>while()</code> loop if you have some sort of exit condition. Otherwise, it will take an additional 5 seconds to stop the robot when you press the &quot;Stop&quot; button. This will cause you to incur penalties during autonomous if it keeps running after the 30 second period. Your code should be programmed in a way to be responsive to stop requests. One way of doing this in a LinearOpMode is adding <code v-pre>opModeIsActive()</code> as a condition for the loop, as the loop will know to exit after you press stop.</p>
-<doc-anchor-target id="opmode-1">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#opmode-1">#</doc-anchor-trigger>
-        <span>OpMode</span>
-    </h2>
-</doc-anchor-target>
-<p>Here are all of the methods included in the OpMode class. Note that the first two are mandatory and you will get an error if you don&#x27;t override both of them.</p>
-<ul>
-<li><code v-pre>init()</code> The code within this method will run once when the &quot;Init&quot; button is pressed</li>
-<li><code v-pre>loop()</code> The code within this method will run continuously when you press &quot;Start&quot; and until you press &quot;Stop&quot;</li>
-<li><code v-pre>start()</code> The code within this method will run once when you press the &quot;Start&quot; button. This will always run before the code in the <code v-pre>loop()</code> method.</li>
-<li><code v-pre>init_loop</code> The code within this method will run continously when you press the &quot;Init&quot; button. This will always run after the code in the <code v-pre>init()</code> method.</li>
-<li><code v-pre>stop()</code> The code within this method will run once when you press the &quot;Stop&quot; button. You should not have any code that controls the drivetrain in this method because you may be penalized in competition for moving after the match is over.</li>
-</ul>
-<p>Here is an example OpMode.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-kotlin"><code v-pre class="language-kotlin">class OpModeDemonstration : OpMode() {
-    var counter : Int = 0
-    override fun init() {
-       telemetry.addLine(&quot;Beans&quot;) // This posts data that is viewable on the Driver Station
-    }
-
-    override fun loop() {
-        telemetry.addLine(counter.toString())
-        Thread.sleep(1000) /* Do not do this in real life!
-        All of the code running on your robot will freeze! */
-        counter += 1
-    }
-
-
-}
-
-</code></pre>
-</doc-codeblock></div>
+<p>Only use a <code v-pre>while()</code> loop if you have an <strong>exit condition</strong></p>
+<p>Otherwise, it will take an additional 5 seconds to stop the robot when you press the &quot;Stop&quot; button. This will cause you to incur <strong>penalties</strong> during autonomous if it keeps running after the 30 second period. Your code should be programmed in a way to be <strong>responsive</strong> to the &quot;<strong>Stop</strong>&quot; button. One way of doing this in a LinearOpMode is adding <code v-pre>opModeIsActive()</code> as a condition for the loop, as the loop will know to <strong>exit</strong> after you press stop.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -298,7 +270,7 @@ class AveryTeeLeeOop : LinearOpMode()  { // Make sure you extend the correct cla
                             </div>
                             <footer class="clear-both">
                             
-                                <nav class="flex mt-14">
+                                <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
                                         <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../setup/installation/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
@@ -322,13 +294,13 @@ class AveryTeeLeeOop : LinearOpMode()  { // Make sure you extend the correct cla
                             </footer>
                         </main>
                 
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
+                        <div class="print:border-none border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div class="print:hidden">
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024. All rights reserved. But, like, follow the GPL or something.</p></div>
+                                <div class="print:justify-center docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved. But, like, follow the GPL or something.</p></div>
                             </footer>
                         </div>
                     </div>
