@@ -1,20 +1,25 @@
 # Welcome!
-Welcome to the WORK IN PROGRESS beginners' guide to using Kotlin in your FTC codebase!
+Welcome to the beginner's guide to using Kotlin in your FTC codebase!
 
+## Whom is this guide for?
+This guide assumes **no prior programming knowledge** other than basic Kotlin, but no other FTC programming knowledge is necessary. This guide is meant for **absolute beginners** and serves to act as a **foundation** for your FTC programming journey.
 
+## Why Kotlin?
+Kotlin offers **numerous benefits** over other FTC programming options.
 
- This guide assumes that you know how to program in Kotlin, but no other FTC programming knowledge is necessary. This guide is meant for absolute beginners who do not have any experience with programming for FTC.
- 
- This is intended as a foundational guide for beginning programmers who may not be comfortable with translating code from Java to Kotlin yet. I started this project because there weren't any guides for me when I first started to program. While I was able to get by using old code, rookie teams without any reference would struggle without it. Kotlin is simply the easier programming language to use, and the goal of K4FTC is to make this an option for first-timers.
+First, Kotlin and Android Studio are **far more powerful** tools than Blocks or OnBotJava, allowing you to use **advanced** programming techniques. They are less limited by **UI**, and they allow you to use advanced libraries such as **RoadRunner** or **Pedro Pathing**.
+**
+Secondly, Kotlin is a syntactically **simpler** language than Java and offers many **quality of life** features that make programming easier, such as type inferencing. [The developers behind Kotlin offer numerous reasons why, and I suggest that you read them.](https://kotlinlang.org/docs/comparison-to-java.html#some-java-issues-addressed-in-kotlin)
 
+## Why K4FTC
+
+I started this guide because I saw **no viable options** for **rookies** who are seeking to learn Kotlin for FTC without any previous knowledge of Java. While older, more experienced programmers who know both languages may be able to translate between the two languages when reading programming guides, this skill isn't obvious to younger rookies who haven't programmed before.
+
+K4FTC seeks to bridge this **knowledge gap**. By providing **introductory** instruction in FTC programming in Kotlin, we can give rookie programmers the skills they need to **move on** to other programming guides and concepts.
 
 ## Contributing
 To contribute, all you have to do is make a pull request to the main branch with the changes you would like to make. This is greatly appreciated as this is currently a solo, volunteer project.
 
-### Contributors
-This is a list of people who have made significant contributions to K4FTC. Feel free to add yourself to this list as a part of your PR in the format shown below.
-
-Avery L., FTC 11468
 
 ## Running locally
 To run this website locally, first install Retype. This can be accomplished by running the following command, assuming you already have NodeJS installed:
